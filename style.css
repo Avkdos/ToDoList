@@ -7,8 +7,13 @@
   font-family: "Montserrat", sans-serif;
 }
 
+img {
+  width: 15px;
+  height: 15px;
+  fill: white;
+}
 body {
-  background: linear-gradient(to right, #1c3c55, #02175d);
+  background: linear-gradient(to right, #bdc7cf, #f6efb4);
   height: 100vh;
   display: flex;
   align-items: center;
@@ -31,8 +36,7 @@ body {
 }
 
 .nav {
-  background-color: #515151;
-  background: linear-gradient(to right, #32556f, #02175d);
+  background-color: #ffffff;
   border-radius: 25px;
   position: relative;
   display: flex;
@@ -96,7 +100,8 @@ body {
 }
 
 .to-do {
-  background: linear-gradient(to right, #32556f, #02175d);
+  background-color: #fff;
+  border: 1px solid #000;
   border-radius: 25px;
   margin-top: 5px;
   padding: 2px 15px;
@@ -106,17 +111,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #fff;
-}
-
-#toDoDelete {
-  background-color: #ff0000;
-  color: #fff;
-  border: none;
-  border-radius: 25px;
-  padding: 5px 10px;
-  cursor: pointer;
-  margin-right: 0px;
+  color: black;
 }
 
 .buttons-container {
