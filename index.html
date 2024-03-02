@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container" id="container">
+      <div class="nav">
+        <!--Three circle diagrams: work, habits, study -->
+        <div class="circle" id="work">
+          <div class="circle-text">Work</div>
+        </div>
+        <div class="circle" id="habits">
+          <div class="circle-text">Habits</div>
+        </div>
+        <div class="circle" id="study">
+          <div class="circle-text">Study</div>
+        </div>
+      </div>
+      <!--Today progress statistic-->
+
+      <div class="newToDo">
+        <input type="text" id="newToDo" placeholder="New To Do" />
+        <button id="addToDo">Add</button>
+      </div>
+      <div class="to-do-list">
+        <div class="to-do">
+          <div class="to-do-text">To Do</div>
+          <div class="to-do-delete">Delete</div>
+        </div>
+        <div class="to-do">
+          <div class="to-do-text">To Do</div>
+          <div class="to-do-delete">Delete</div>
+        </div>
+        <div class="to-do">
+          <div class="to-do-text">To Do</div>
+          <div class="to-do-delete">Delete</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
