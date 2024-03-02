@@ -3,53 +3,48 @@ let counter = 0;
 
 const addToDo = document.getElementById("addToDo");
 const toDoListContainer = document.getElementById("toDoListContainer");
-let deleteButtons = document.getElementsByClassName("to-do-delete");
-deleteButtons = Array.from(deleteButtons);
-deleteButtons.forEach((button) => {
-  button.addEventListener("click", function () {
-    deleteToDo(button.id);
-  });
-});
 
 addToDo.addEventListener("click", function () {
   const text = document.getElementById("newToDo").value;
   if (text === "") return;
+
   counter++;
   toDoList.set(counter, text);
-  toDoListContainer.innerHTML += `<div class="to-do">
-  <p class="to-do-text">
-    ${text}
-  </p>
-  <div class="buttons-container">
-    <div class="to-do-delete" id=deleteTodo${counter}><img src="trash-solid.svg" alt="" /></div>
-    <div class="to-do-delete">
-      <img src="circle-check-regular.svg" alt="" />
-    </div>
-  </div>
-</div>`;
-  console.log(deleteButtons);
-  const newButton = document.getElementById(`deleteTodo${counter}`);
-  newButton.addEventListener("click", function () {
-    deleteToDo(newButton.id);
-  });
-  deleteButtons.push(document.getElementById(`deleteTodo${counter}`));
+  renderToDoList();
 });
+
+const renderToDoList = () => {
+  toDoListContainer.innerHTML = "";
+  toDoList.forEach((value, key) => {
+    toDoListContainer.innerHTML += createToDoElement(key, value);
+  });
+
+  attachDeleteListeners();
+};
+
+const createToDoElement = (id, text) => {
+  return `<div class="to-do">
+    <p class="to-do-text">${text}</p>
+    <div class="buttons-container">
+      <div class="to-do-delete" id="deleteTodo${id}"><img src="trash-solid.svg" alt="" /></div>
+      <div class="to-do-delete"><img src="circle-check-regular.svg" alt="" /></div>
+    </div>
+  </div>`;
+};
+
+const attachDeleteListeners = () => {
+  const deleteButtons = document.querySelectorAll(".to-do-delete");
+  deleteButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      deleteToDo(button.id);
+    });
+  });
+};
 
 const deleteToDo = (id) => {
   let numberId = id.match(/\d+/)[0];
   toDoList.delete(+numberId);
-  toDoListContainer.innerHTML = "";
-  toDoList.forEach((value, key) => {
-    toDoListContainer.innerHTML += `<div class="to-do">
-  <p class="to-do-text">
-    ${value}
-  </p>
-  <div class="buttons-container">
-    <div class="to-do-delete" id=deleteTodo${key}><img src="trash-solid.svg" alt="" /></div>
-    <div class="to-do-delete">
-      <img src="circle-check-regular.svg" alt="" />
-    </div>
-  </div>
-</div>`;
-  });
+  renderToDoList();
 };
+
+renderToDoList();
