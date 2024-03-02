@@ -99,10 +99,12 @@ body {
   background: linear-gradient(to right, #32556f, #02175d);
   border-radius: 25px;
   margin-top: 5px;
+  padding: 2px 15px;
   width: 100%;
   max-height: 200px;
+  gap: 5rem;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   color: #fff;
 }
@@ -115,4 +117,14 @@ body {
   padding: 5px 10px;
   cursor: pointer;
   margin-right: 0px;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 10px;
+}
+
+.to-do-text {
+  font-size: 20px;
+  text-align: justify;
 }
