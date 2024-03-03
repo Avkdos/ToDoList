@@ -8,6 +8,7 @@ addToDo.addEventListener("click", function () {
   const text = document.getElementById("newToDo").value;
   if (text === "") return;
 
+  document.getElementById("newToDo").value = "";
   counter++;
   toDoList.set(counter, text);
   renderToDoList();
@@ -27,7 +28,7 @@ const createToDoElement = (id, text) => {
     <p class="to-do-text">${text}</p>
     <div class="buttons-container">
       <div class="to-do-delete" id="deleteTodo${id}"><img src="trash-solid.svg" alt="" /></div>
-      <div class="to-do-delete"><img src="circle-check-regular.svg" alt="" /></div>
+      <div class="to-do-done"><img src="circle-check-regular.svg" alt="" /></div>
     </div>
   </div>`;
 };
